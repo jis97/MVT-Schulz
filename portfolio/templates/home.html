@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% load static %}
+<img src="{% static 'portfolio/bannerweb-30y-20220224-480.png' %}" alt="">
+<h1>home</h1>
+
+{% for projects in projects %}
+<h2>{{projects.title}}</h2>
+<img src="{{projects.image.url}}" alt="{{projects.title}}">
+
+{% if projects.url %}
+<a href="{{projects.url}}">{{projects.url}}</a>
+{% endif %}
+{% endfor %}
+{% endblock %}
